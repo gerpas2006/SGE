@@ -1,0 +1,6 @@
+print(int(True))
+print("Hola me llamo Germán")
+palabra= "Hola me   gf llamo Germán"
+print(palabra)
+palabra2 = "Hola"
+print(palabra2 + " me llamo german")
