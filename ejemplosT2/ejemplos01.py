@@ -9,3 +9,5 @@ print(ciudades[4])
 print(ciudades[0:3])
 print(ciudades[:3])
 print(ciudades[-1:-4:-1])
+
+

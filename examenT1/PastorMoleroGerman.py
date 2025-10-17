@@ -79,6 +79,8 @@ while salir:
           print(f"Este es el sueldo del empleado de la categoria 4 con todos los plus {resultado}€")
       case _:
           print("Elige una opción correcta")
+
+
 print("Gracias por utilizar mi programa")
           
 
