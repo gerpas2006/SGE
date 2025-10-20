@@ -1,6 +1,7 @@
-lista  = [1,2,3,4,5,6,7,8,9]
-lista2 = [1,3,4,6,7,9,2,5,8]
-lista3 = [5,8,4,2,8,1,56,7,14]
+lista  = ["manzana","pera","uva","naranja","limón","melón","kiwi","fresa","mango"]
+lista2 = ["limón","cereza","pera","kiwi","melocotón","uva","banano","ciruela","arándano"]
+lista3 = ["sol","luna","estrella","nube","viento","lluvia","rayo","trueno","tormenta"]
+
 repetir = True
 
 while repetir:
@@ -28,7 +29,7 @@ while repetir:
         case 1:
             print("1. Para añadir un dato a las lista utilizamos la funcion append()")
             print(f"Esta es la lista que tenemos ahora {lista}")
-            anadir = int(input("Dime el número que quieres añadir "))
+            anadir = str(input("Dime la palabra que quieres añadir "))
             lista.append(anadir)
             print(f"Asi queda la lista despúes de ejecutar la función append() {lista}")
 
@@ -36,7 +37,7 @@ while repetir:
             print("2. Para añadir un dato en una posicion concreta se utiliza la función insert()")
             print(f"Esta es la lista que tenemos ahora {lista}")
             posicion = int(input("Dime la posicion en la que quieres añadir el numero "))
-            anadir = int(input("Dime el número que quieres añadir "))
+            anadir = str(input("Dime la palabra que quieres añadir "))
             posicion -= 1
             lista.insert(posicion,anadir)
             print(f"Esta es la lista que tenemos ahora despues de añadir el dato {lista}")
@@ -60,7 +61,7 @@ while repetir:
             print(f"\nEsta es la lista que vamos a modificar {lista2}")
             modificarPorIndice = int(input("\nDime el indice del numero que quieres modificar "))
             modificarPorIndice -= 1
-            nuevoValor = int(input("Dime el nuevo valor "))
+            nuevoValor = str(input("Dime el nuevo valor "))
             lista2[modificarPorIndice] = nuevoValor
             print(f"Asi queda la lista después de modificarlo mediante el índice {lista2}")
 
@@ -72,12 +73,11 @@ while repetir:
             delPorIndice -= 1
             del lista2[delPorIndice]
             print(f"Asi queda la lista {lista2}")
-            delPorValor = int(input("2. Dime el valor que quieres eliminar "))
+            delPorValor = str(input("2. Dime el valor que quieres eliminar "))
             lista2.remove(delPorValor)
             print(f"Asi queda la lista {lista2}")
-            delPorValor = int(input("3. Dime por que rango quieres eliminar "))
-            delPorRango1 = int(input("Dime desde que número quieres eliminar"))
-            delPorRango2 = int(input("Dime hasta que número quieres eliminar"))
+            delPorRango1 = int(input("Dime desde que número quieres eliminar "))
+            delPorRango2 = int(input("Dime hasta que número quieres eliminar "))
             lista2[delPorRango1:delPorRango2] = []
             print(f"Asi queda la lista {lista2}")
             print("Y para eliminar la lista entera se utiliza la función clear()")
@@ -86,19 +86,21 @@ while repetir:
         case 7:
             print("7. Para encontrar un elemento se hace con la función index()")
             print(f"Esta es la lista {lista}")
-            buscarValor = int(input("Dime el valor que quieres buscar"))
+            buscarValor = str(input("Dime el valor que quieres buscar "))
             print(f"Este es el indice del valor que has buscado {lista.index(buscarValor)}")
 
         case 8:
-            print("8. Para saber si un elemento esta en la lista se utiliza la finción in")
+            print("8. Para saber si un elemento esta en la lista se utiliza la función in")
             print(f"Esta es la lista {lista}")
-            saberSiEsta = int(input("Dime el elemento que quieres saber si esta o no"))
-            print(saberSiEsta in lista)
-            print(f"Esta es la lista {lista}")
+            saberSiEsta = str(input("Dime el elemento que quieres saber si esta o no "))
+            if(saberSiEsta in lista):
+                print(f"La palabra {saberSiEsta} si esta en la lista")
+            else:
+                print(f"La palabra {saberSiEsta} no esta en la lista")
 
         case 9:
             print("9. Para saber cuántas veces se repite ese valor en la lista se utiliza la función .count()")
-            contar = int(input("Dime el valor que quieres saber el número de veces que se repite"))
+            contar = str(input("Dime el valor que quieres saber el número de veces que se repite "))
             print(f"Este es el número de veces que se repite el valor({contar} = {lista.count(contar)})")
 
         case 10:
