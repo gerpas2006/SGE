@@ -4,8 +4,9 @@ lista3 = ["sol","luna","estrella","nube","viento","lluvia","rayo","trueno","torm
 
 repetir = True
 
+print("Bienvenido a mi programa")
 while repetir:
-    print("Voy a explicar funcionalidades en listas en Python")
+    print("******************************************************************")
     print("0. Salir")
     print("1. Añadir un dato al final de la lista")
     print("2. Añadir un dato en una posición concreta")
@@ -20,11 +21,14 @@ while repetir:
     print("11. Mostrar la longitud de la lista")
     print("12. Iterar mostrando índices y valores")
     print("13. Iterar dos listas en paralelo mostrando pares")
+    print("******************************************************************")
+
     eleccion = int(input("Dime lo que quieres hacer"))
 
     match eleccion:
         case 0:
             print("Saliendo....")
+            print("Gracias por utilizar mi programa")
             repetir=False
         case 1:
             print("1. Para añadir un dato a las lista utilizamos la funcion append()")
@@ -99,6 +103,7 @@ while repetir:
                 print(f"La palabra {saberSiEsta} no esta en la lista")
 
         case 9:
+            print(lista)
             print("9. Para saber cuántas veces se repite ese valor en la lista se utiliza la función .count()")
             contar = str(input("Dime el valor que quieres saber el número de veces que se repite "))
             print(f"Este es el número de veces que se repite el valor({contar} = {lista.count(contar)})")
