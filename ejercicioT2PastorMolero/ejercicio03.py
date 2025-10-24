@@ -18,3 +18,4 @@ for i in notas:
 
 media=media/len(notas)
 print(f"La media de todas las notas es {media}")
+print(f"La nota más alta es {max(notas)} y la nota mas baja es {min(notas)}")
