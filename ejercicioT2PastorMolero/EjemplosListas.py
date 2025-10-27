@@ -111,6 +111,7 @@ while repetir:
         case 10:
             print("10. Para ordenar una lista se utiliza la función sorted() que esta solo la ordena y no la modifica, si la quieres modificar utilizas la función sort()")
             print(f"Lista ordenada {sorted(lista)}")
+            lista.sort()
 
         case 11:
             print("11. Para saber la longitud de una lista se utiliza la función len()")
@@ -124,7 +125,7 @@ while repetir:
 
         case 13:
             print("13. Para iterar sobre varias lista se utiliza la función zip()")
-            for product, detail in zip(lista, lista3):
-                print(product, detail)
+            for i, v in zip(lista, lista3):
+                print(i,v)
         case _:
             print("Opción no válida.")
