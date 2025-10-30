@@ -21,9 +21,10 @@ while repetir:
     print("11. Mostrar la longitud de la lista")
     print("12. Iterar mostrando índices y valores")
     print("13. Iterar dos listas en paralelo mostrando pares")
+    print("14. Comparar dos listas")
     print("******************************************************************")
 
-    eleccion = int(input("Dime lo que quieres hacer"))
+    eleccion = int(input("Dime lo que quieres hacer ")) 
 
     match eleccion:
         case 0:
@@ -127,5 +128,8 @@ while repetir:
             print("13. Para iterar sobre varias lista se utiliza la función zip()")
             for i, v in zip(lista, lista3):
                 print(i,v)
+        case 14:
+            print("Para comparar dos listas se pueden utilizar los operadores <> = y esto devuelve un boolean")
+            print(lista>lista2)
         case _:
             print("Opción no válida.")
