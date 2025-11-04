@@ -8,6 +8,9 @@
 listPalabras1 = []
 listPalabras2 = []
 repetir = []
+noRepetidosLista1 = []
+noRepetidosLista2 = []
+todas = []
 
 numeroDePalabras = int(input("Dime cuántas palabras quieres añadir en las listas "))
 
@@ -25,5 +28,36 @@ for i in listPalabras1:
             repetir.append(j)
 
 print(f"Estas son las plabras que se repiten en las dos listas {repetir}")
+
+for i in listPalabras1:
+    if i not in listPalabras2:
+        noRepetidosLista1.append(i) 
+
+print(f"Estos son los valores que no se repiten de la lista 1 {noRepetidosLista1}")
+
+for i in listPalabras2:
+    if i not in listPalabras1:
+        noRepetidosLista2.append(i) 
+        
+print(f"Estos son los valores que no se repiten de la lista 1 {noRepetidosLista2}")
+
+for i in listPalabras1:
+    if i not in todas:
+        todas.append(i)
+
+for j in listPalabras2:
+    if j not in todas:
+        todas.append(j)
+
+print(f"Estos son los valores de las dos listas sin repeticiones {todas}")
+
+
+
+
+
+
+
+
+
         
 
