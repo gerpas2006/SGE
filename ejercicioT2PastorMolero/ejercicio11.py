@@ -17,13 +17,13 @@ for i in range (numeroDePalabras):
 
 for i in range (numeroDePalabras):
     agregar = str(input("Dime el valor que quieres añadir "))
-    listPalabras2.append
+    listPalabras2.append(agregar)
 
 for i in listPalabras1:
     for j in listPalabras2:
         if j == i:
-            repetir.append(i)
+            repetir.append(j)
 
-print(f"{repetir}")
+print(f"Estas son las plabras que se repiten en las dos listas {repetir}")
         
 
