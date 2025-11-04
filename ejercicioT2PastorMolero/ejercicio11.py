@@ -5,3 +5,25 @@
 #Lista de palabras que aparecen en ambas listas.
 
 
+listPalabras1 = []
+listPalabras2 = []
+repetir = []
+
+numeroDePalabras = int(input("Dime cuántas palabras quieres añadir en las listas "))
+
+for i in range (numeroDePalabras):
+    agregar = str(input("Dime el valor que quieres añadir "))
+    listPalabras1.append(agregar)
+
+for i in range (numeroDePalabras):
+    agregar = str(input("Dime el valor que quieres añadir "))
+    listPalabras2.append
+
+for i in listPalabras1:
+    for j in listPalabras2:
+        if j == i:
+            repetir.append(i)
+
+print(f"{repetir}")
+        
+
