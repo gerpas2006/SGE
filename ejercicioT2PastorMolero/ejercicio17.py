@@ -10,12 +10,10 @@
 import random
 
 
-
 temperaturas = [
     ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"],
     []
 ]
-
 desde = float(input("Dime desde que temperatura quieres registrar "))
 hasta = float(input("Dime hasta que temperatura quieres registrar "))
 
@@ -30,3 +28,13 @@ media = round(sum(temperaturas[1])/len(temperaturas[1]),2)
 print(f"La media de las temperaturas es {media}")
 
 print(f"La temperatura más alta registrada a sido {max(temperaturas[1])} y la mínima a sido {min(temperaturas[1])}")
+
+for temp,dias in sorted(zip(temperaturas[1],temperaturas[0])):
+    print(f"{temp} : {dias}")
+
+for i in range (len(temperaturas[1])):
+    if temperaturas[1][i] > media:
+        print(temperaturas[0][i])
+    
+
+
