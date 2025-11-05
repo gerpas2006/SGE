@@ -14,6 +14,10 @@ temperaturas = [
     ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"],
     []
 ]
+listaSuperioresMedia = [
+    [],
+    []
+]
 desde = float(input("Dime desde que temperatura quieres registrar "))
 hasta = float(input("Dime hasta que temperatura quieres registrar "))
 
@@ -29,12 +33,23 @@ print(f"La media de las temperaturas es {media}")
 
 print(f"La temperatura más alta registrada a sido {max(temperaturas[1])} y la mínima a sido {min(temperaturas[1])}")
 
+print("La lista ordenada de menor a mayor")
 for temp,dias in sorted(zip(temperaturas[1],temperaturas[0])):
     print(f"{temp} : {dias}")
 
+print("Estos son los dias que estuvieron por encima de la media")
 for i in range (len(temperaturas[1])):
     if temperaturas[1][i] > media:
-        print(temperaturas[0][i])
+        print(temperaturas[0][i],temperaturas[1][i])
+
+print("Estos son los dias con mayor temperatura que la media ")
+for i in range (len(temperaturas[1])):
+    if temperaturas[1][i] > media:
+        listaSuperioresMedia[0].append(temperaturas[0][i])
+        listaSuperioresMedia[1].append(temperaturas[1][i])
     
+
+for dias,temp in zip(listaSuperioresMedia[0],listaSuperioresMedia[1]):
+    print(f"{dias} : {temp}") 
 
 
