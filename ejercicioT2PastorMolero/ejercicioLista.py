@@ -56,11 +56,7 @@ while repetir:
             print(f"La lista ordenada es {sorted(departamento)}")
         case 7:
             print(f"La suma de las recaudaciones es {sum(departamento)}")
-        case 8:
-            print(f"El porcentaje al mes de alquilar la habitacion es {}")
-        case 9:
-            for i in departamento:
-                if i == min(departamento): 
+                
         
 
 
