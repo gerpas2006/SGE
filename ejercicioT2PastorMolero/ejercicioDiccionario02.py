@@ -9,7 +9,6 @@
 # nota de corte).
 import random
 
-
 alumnos = {
     '12345j' : random.randint(1,10),
     '12345s' : random.randint(1,10),
@@ -17,6 +16,7 @@ alumnos = {
     '12345w' : random.randint(1,10),
     '12345e' : random.randint(1,10),
 }
+
 
 repetir = True
 
