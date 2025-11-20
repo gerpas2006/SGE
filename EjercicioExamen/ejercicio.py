@@ -22,21 +22,67 @@ while repetir:
             telefono = input("Dime el teléfono del nuevo contacto: ")
             correo = input("Dime el correo del nuevo contacto: ")
 
-            with open('fichero.txt', 'a') as f:
-                with open('fichero.txt', 'r') as read_f:
-                    contenido = read_f.read()
-                
-                f.write(f"\n{'='*80}\n")
-                f.write(f"CONTACTO\n")
-                f.write(f"{'='*80}\n")
-                f.write(f"Nombre:    {nombre}\n")
-                f.write(f"Apellido:  {apellido}\n")
-                f.write(f"Teléfono:  {telefono}\n")
-                f.write(f"Correo:    {correo}\n")
+            f = open('fichero.txt', 'a')
+            f.write(f"\n{'='*80}\n")
+            f.write(f"CONTACTO\n")
+            f.write(f"{'='*80}\n")
+            f.write(f"Nombre:    {nombre}\n")
+            f.write(f"Apellido:  {apellido}\n")
+            f.write(f"Teléfono:  {telefono}\n")
+            f.write(f"Correo:    {correo}\n")
+            f.close()
 
             print("Contacto añadido.\n")
+            
         case 2:
-            with open(contactos, "r") as f:
-                print(f.read())
+            f = open(contactos, "r")
+            print(f.read())
+            f.close() 
+            
         case 3:
+            f = open(contactos, "r")
+            contenido = f.read()
+            f.close()
+            
+            nombre_buscar = input("Nombre del contacto a actualizar: ")
+            
+            if nombre_buscar in contenido:
+                nuevo_nombre = input("Nuevo nombre: ")
+                nuevo_apellido = input("Nuevo apellido: ")
+                nuevo_telefono = input("Nuevo teléfono: ")
+                nuevo_correo = input("Nuevo correo: ")
+                
+                contenido = contenido.replace(f"Nombre:    {nombre_buscar}", f"Nombre:    {nuevo_nombre}")
+                
+                f = open(contactos, "w")
+                f.write(contenido)
+                f.close()
+                print("Contacto actualizado.\n")
+            else:
+                print("Contacto no encontrado.\n")
+                
+        case 4:
+            f = open(contactos, "r")
+            contenido = f.read()
+            f.close()
+            
+            nombre_borrar = input("Nombre del contacto a borrar: ")
+            
+            if nombre_borrar in contenido:
+                lineas = contenido.split('\n')
+                nuevo = []
+                i = 0
+                while i < len(lineas):
+                    if f"Nombre:    {nombre_borrar}" in lineas[i]:
+                        i += 4
+                    else:
+                        nuevo.append(lineas[i])
+                    i += 1
+                
+                f = open(contactos, "w")
+                f.write('\n'.join(nuevo))
+                f.close()
+                print("Contacto borrado.\n")
+            else:
+                print("Contacto no encontrado.\n")
             
