@@ -23,7 +23,6 @@ while repetir:
             correo = input("Dime el correo del nuevo contacto: ")
 
             with open('fichero.txt', 'a') as f:
-                # Leer el archivo para contar contactos existentes
                 with open('fichero.txt', 'r') as read_f:
                     contenido = read_f.read()
                 
@@ -40,4 +39,4 @@ while repetir:
             with open(contactos, "r") as f:
                 print(f.read())
         case 3:
-        
+            
