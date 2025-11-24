@@ -2,9 +2,13 @@
 # llamado 'origen.txt' en otro llamado 'copia.txt'. 
 import shutil
 
-origen = 'ejercicio03/origen.txt'
-copia = 'ejercicio03/copia.txt'
+origen = open('ejercicio03/origen.txt')
+copia = open('ejercicio03/copia.txt', 'w')
 
-shutil.copy(origen,copia)
+for i in origen:
+    copia.write(i)
+
+origen.close()
+copia.close()
 
 
