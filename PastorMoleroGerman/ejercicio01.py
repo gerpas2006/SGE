@@ -1,7 +1,7 @@
 # 1. Escriba un programa que pida un número. Después pregunte cuántos números se van a 
 # introducir, pida esos números, y escriba cuántos de esos números era mayor que el anterior
 
-numeroPedido= float(input("Dime un número"))
+numeroPedido= int(input("Dime un número"))
 numeroAPedir = int(input("Cuántos número quieres introducir"))
 lista = []
 listaAnadido = []
