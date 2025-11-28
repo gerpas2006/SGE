@@ -2,13 +2,14 @@
 # una lista que empiece por el más pequeño y termine en el más grande.
 
 
+def ordenarDeMenorAMayor(listaPedidios):
+    return sorted(listaPedidios)
+
 listaPedidios = []
 numeroAPedir = 3
 for i in range(0,numeroAPedir):
     numeroPedido =int(input("Dime el número"))
     listaPedidios.append(numeroPedido)
 
-def ordenarDeMenorAMayor(listaPedidios):
-    return sorted(listaPedidios)
 
 print(ordenarDeMenorAMayor(listaPedidios))
