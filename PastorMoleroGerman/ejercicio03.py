@@ -4,14 +4,16 @@
 
 def mayor(numeroAPedir, listaNumero):
     for i in range(numeroAPedir):
-        anadir = int(input("Dime el número"))
+        anadir = int(input("Dime el número "))
         listaNumero.append(anadir)
         if listaNumero[i] > listaNumero[i-1]:
             print("Este número es mayor que el anterior")
 
 listaNumero = []
 
-numeroAPedir = int(input("Dime cuántos números quieres añadir"))
+numeroAPedir = int(input("Dime cuántos números quieres añadir "))
 
 
-print(mayor(numeroAPedir, listaNumero))
+mayor(numeroAPedir, listaNumero)
+
+#Mi compañero lo que a hecho es que el mensaje le salte cuando ya a pedido todos los números

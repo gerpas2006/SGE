@@ -5,11 +5,17 @@
 def ordenarDeMenorAMayor(listaPedidios):
     return sorted(listaPedidios)
 
+def anadirNumeroPedidos(numeroAPedir):
+    for i in range(0,numeroAPedir):
+        numeroPedido =int(input("Dime el número "))
+        listaPedidios.append(numeroPedido)
+
+
 listaPedidios = []
-numeroAPedir = 3
-for i in range(0,numeroAPedir):
-    numeroPedido =int(input("Dime el número"))
-    listaPedidios.append(numeroPedido)
+numeroAPedir = 4
 
 
+anadirNumeroPedidos(numeroAPedir)
 print(ordenarDeMenorAMayor(listaPedidios))
+
+# Mi compañero lo ha hecho sin utilizar for y ha metido las dos funciones en una para al final solo mostrar la funcion que contiene el resultado final

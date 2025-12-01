@@ -4,17 +4,22 @@
 def numeroMayores(numeroPedido,listaAnadido):
     for i in listaAnadido:
         if i > numeroPedido:
-            lista.append(i)
-    return lista
+            listaNumeroMayores.append(i)
+    return listaNumeroMayores
 
-numeroPedido= int(input("Dime un número"))
-numeroAPedir = int(input("Cuántos número quieres introducir"))
-lista = []
+def anadirNumero(listaAnadido,numeroAPedir):
+    for i in range(numeroAPedir):
+        numeroAnadir = int(input("Dime el número "))
+        listaAnadido.append(numeroAnadir)
+
+
+numeroPedido= int(input("Dime un número "))
+numeroAPedir = int(input("Cuántos número quieres introducir "))
+listaNumeroMayores = []
 listaAnadido = []
 
-for i in range(numeroAPedir):
-    numeroAnadir = int(input("Dime el número"))
-    listaAnadido.append(numeroAnadir)
 
-
+anadirNumero(listaAnadido,numeroAPedir)
 print(f"Estos son los números más grandes que el pedido al principio {numeroMayores(numeroPedido,listaAnadido)}")
+
+# Mi compañero lo que a hecho ha sido añadir el numero pedido en la lista y después lo ha comparado
