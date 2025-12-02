@@ -1,5 +1,6 @@
 # 2. Escriba un programa que pida tres números enteros distintos y que escriba 
 # una lista que empiece por el más pequeño y termine en el más grande.
+#No leemos dentro de una funcion a no ser que me lo digan
 
 
 def ordenarDeMenorAMayor(listaPedidios):
