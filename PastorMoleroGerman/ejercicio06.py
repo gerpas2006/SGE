@@ -2,7 +2,7 @@
 # (nombre_comida, calorías) y devuelva una nueva lista solo con las comidas cuya cantidad de calorías
 # sea menor o igual que max_calorias. Si la lista está vacía, devuelve una lista vacía.
 
-def filtrar_calorias(lista_comidas, max_calorias):
+def filtarCalorias(lista_comidas,max_calorias):
     listaNueva = []
     if not lista_comidas:
         return []      
@@ -21,4 +21,4 @@ lista_comidas = [
         ('Ensalada', 50)
 ]
 
-print(filtrar_calorias(lista_comidas, 150))
+print(filtarCalorias(lista_comidas,150))
