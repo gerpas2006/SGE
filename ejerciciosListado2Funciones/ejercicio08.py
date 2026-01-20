@@ -15,7 +15,9 @@ class Triangulo(Figura):
         self.altura = altura
         self.base = base
 
-    
+    def __str__(self):
+        return f"Figura(Nombre: {self.nombre}, Altura: {self.altura}, Base: {self.base})"
+
     def calcularArea(self):
         return (self.base*self.altura)/2
     
@@ -71,6 +73,6 @@ for i in figuras:
             triangulo = i
         
 
-print(f"La suma de todas las áreas es {round(suma,2)} y la suma de todos los perimetros es {round(perimetro,2)} y el triangulo con mayor área es {triangulo.nombre}")
+print(f"La suma de todas las áreas es {round(suma,2)} y la suma de todos los perimetros es {round(perimetro,2)} y el triangulo con mayor área es {triangulo}")
 
 
