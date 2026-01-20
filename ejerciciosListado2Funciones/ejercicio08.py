@@ -1,47 +1,76 @@
 import math
 class Figura:
+    def __init__(self,nombre:str):
+        self.nombre = nombre
     
-    def calcularArea():
-        pass
-    def calcularPerimetro():
-        pass
-    def calcularFactorEscala():
+    def calcularArea(self):
         pass
 
-class Rectangulo(Figura):
-    def calcularArea(base:float,altura:float):
-        return round((base*altura),2)
-    
-    def calcularPerimetro(base:float,altura:float):
-        return round((2*(base+altura)),2)
-    
-    def calcularFactorEscala():
+    def calcularPerimetro(self):
         pass
-        
-
-class Circulo(Figura):
-    
-    def calcularArea(radio:float):
-        return round((math.pi*radio**2),2)
-    
-    def calcularPerimetro(radio:float):
-        return round((2*math.pi*radio),2)
-    
-    def calcularFactorEscala():
-        pass
-    
 
 class Triangulo(Figura):
-    
-    def calcularArea(base:float,altura:float):
-        return round(((base*altura)/2),2)
-    
-    def calcularPerimetro(longitudLadoUno:float,longitudLadoDos:float,longitudLadoTres:float):
-        return round((longitudLadoUno+longitudLadoDos+longitudLadoTres),2)    
-    
-    def calcularFactorEscala():
-        pass
-    
+    def __init__(self, nombre:str,altura:float,base:float):
+        super().__init__(nombre)
+        self.altura = altura
+        self.base = base
 
+    
+    def calcularArea(self):
+        return (self.base*self.altura)/2
+    
+    def calcularPerimetro(self):
+        return self.base*3
+
+class Circulo(Figura):
+
+    def __init__(self, nombre:str,radio:float):
+        super().__init__(nombre)
+        self.radio = radio
+    
+    def calcularArea(self):
+        return math.pi*self.radio**2
+    
+    def calcularPerimetro(self):
+        return 2*math.pi*self.radio
+
+class Rectangulo(Figura):
+
+    def __init__(self, nombre:str,altura:float,base:float):
+        super().__init__(nombre)
+        self.base = base
+        self.altura = altura
+
+    def calcularArea(self):
+        return self.base*self.altura
+    
+    def calcularPerimetro(self):
+        return 2 * (self.base+self.altura)
+
+figuras: list[Figura] = [
+    Triangulo('Triangulo',5,4),
+    Triangulo('Triangulo1',8,2),
+    Triangulo('Triangulo2',4,6),
+    Circulo('Círculo',2.5),
+    Rectangulo('Rectangulo',5,4)
+]
+
+suma = 0.0
+perimetro = 0.0
+triangulo = None
+area = 0.0
+
+
+for i in figuras:
+    print(f"Nombre: {i.nombre} Área {round(i.calcularArea(),2)} Perímetro {round(i.calcularPerimetro(),2)}")
+    suma += i.calcularArea()
+    perimetro += i.calcularPerimetro()
+    if isinstance(i,Triangulo):
+        if (area<i.calcularArea()):
+            area = i.calcularArea()
+            triangulo = i
+        
+
+print(f"La suma de todas las áreas es {round(suma,2)} y la suma de todos los perimetros es {round(perimetro,2)} y el triangulo con mayor área es {triangulo.nombre}")
 
 
