@@ -1,6 +1,5 @@
 class yogur:
 
-    tamanio:float = 100.0
     caloria:float = 120.0
     
     def __init__(self,marca:str,sabor:str,trocitos:bool,desnatado:bool):
@@ -44,17 +43,15 @@ class yogur:
 class calorias:
 
     def calcularCalorias(yogur:yogur,tamanio:float)->float:
-        totalCalorias = 0.0    
+        totalCalorias = (tamanio / 100.0) * yogur.caloria
         if yogur.desnatado:
-            totalCalorias = totalCalorias - totalCalorias * 0.3
-        else:
-            totalCalorias = (tamanio / 100.0) * yogur.caloria           
+            totalCalorias = totalCalorias - totalCalorias * 0.3           
         return totalCalorias
     
-    def sumarCalorias(yogures:list[yogur], tamanio:float)->float:
+    def sumarCalorias(yogures:list[yogur], tamanio:list[float])->float:
         suma = 0
-        for i in yogures:
-            suma += calorias.calcularCalorias(i, tamanio)
+        for i in range(0,len(yogures)):
+            suma += calorias.calcularCalorias(yogures[i], tamanio[i])
         return suma
     
     def calcularCaloriasDesnatados(yogures:list[yogur], tamanio:float)->float:
@@ -67,30 +64,27 @@ class calorias:
 class principal:
     print("=== CONTADOR DE CALORÍAS DE YOGURES ===\n")
 
-    marca = input("Marca del yogur: ")
-    sabor = input("Sabor: ")
-    trocitos = input("¿Tiene trocitos? (s/n): ").lower() == 's'
-    desnatado = input("¿Es desnatado? (s/n): ").lower() == 's'
-    tamanio = float(input("Tamaño en ml: "))
+    yogures:list[yogur] = []
+    tamanios:list[float] = []
 
-    yogur1 = yogur(marca, sabor, trocitos,desnatado)
-    calorias_yogur1 = calorias.calcularCalorias(yogur1, tamanio)
-    print(f"\nCalorías del yogur: {calorias_yogur1} kcal\n")
+    cant = int(input("Cuantos yogures quieres añadir: "))
+    for i in range (cant):
+        marca = input(f"Dime la marca del {i+1} yogur: ")
+        sabor = input(f"Dime el sabor del {i+1} yogur: ")
+        trocitos = input("Tiene trocitos el yogur? s/n: ")
+        if trocitos == 's':
+            trocitos = True
+        else:
+            trocitos = False
+        desnatado = input("El yogur es desnatado? s/n: ")
+        if desnatado == 's':
+            desnatado = True
+        else:
+            desnatado = False
+        tamanio = float(input("Que tamaño tiene el yogur: "))
+        y = yogur(marca,sabor,trocitos,desnatado)
+        print(f"El yogur {i+1} tiene {round(calorias.calcularCalorias(y,tamanio),2)} kcal\n")
+        yogures.append(y)
+        tamanios.append(tamanio)
 
-    print("--- Segundo yogur ---")
-    marca2 = input("Marca del yogur: ")
-    sabor2 = input("Sabor: ")
-    trocitos2 = input("¿Tiene trocitos? (s/n): ").lower() == 's'
-    desnatado2 = input("¿Es desnatado? (s/n): ").lower() == 's'
-    tamanio2 = float(input("Tamaño en ml: "))
-
-    yogur2 = yogur(marca2, sabor2, trocitos2, desnatado2)
-    calorias_yogur2 = calorias.calcularCalorias(yogur2, tamanio2)
-    print(f"\nCalorías del yogur: {calorias_yogur2} kcal\n")
-
-    yogures = [yogur1, yogur2]
-    total = calorias.sumarCalorias(yogures, 100)
-    print(f"Calorías totales de los yogures (100ml c/u): {total} kcal")
-    
-    total_desnatados = calorias.calcularCaloriasDesnatados(yogures, 100)
-    print(f"Calorías solo de yogures desnatados (100ml c/u): {total_desnatados} kcal")
+    print(f"La suma de todos los yogures es de {calorias.sumarCalorias(yogures,tamanios)} kcal")
