@@ -16,7 +16,7 @@ class Triangulo(Figura):
         self.base = base
 
     def __str__(self):
-        return f"Figura(Nombre: {self.nombre}, Altura: {self.altura}, Base: {self.base})"
+        return f"Figura (Nombre: {self.nombre}, Altura: {self.altura}, Base: {self.base})"
 
     def calcularArea(self):
         return (self.base*self.altura)/2
