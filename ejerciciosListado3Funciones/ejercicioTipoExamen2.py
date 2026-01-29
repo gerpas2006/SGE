@@ -1,14 +1,14 @@
 class Beverage:
     def __init__(self,nombre:str,cost:float):
         self.nombre = nombre
-        self.cost = cost
+        self._cost = cost
     @property
     def getCost(self):
-        return self.cost
+        return self._cost
     
     @getCost.setter
     def cost(self,cost:float):
-        self.cost = cost
+        self._cost = cost
 
 class PremiumIngredients(Beverage):
     def __init__(self, nombre:str, cost:float, listaIngrediente:list):
