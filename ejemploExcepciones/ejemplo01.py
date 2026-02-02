@@ -32,3 +32,12 @@ else:
     print(f"El número buscado es {r}")
 finally:
     print("Que tengas un buen día")
+
+def getint(numero:int) -> int:
+    try:
+        return numero
+    except ValueError:
+        print("Tienes que poner un número no una palabra")
+    except Exception:
+        print("Error")
+
