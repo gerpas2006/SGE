@@ -33,11 +33,13 @@ else:
 finally:
     print("Que tengas un buen día")
 
-def getint(numero:int) -> int:
+def getint(numero):
     try:
-        return numero
+        resul = int(numero)
+        return resul
     except ValueError:
         print("Tienes que poner un número no una palabra")
     except Exception:
         print("Error")
 
+getint('pedro')
