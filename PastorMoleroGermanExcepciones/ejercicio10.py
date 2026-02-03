@@ -54,20 +54,19 @@ class GestionPedido:
             raise IsEmpty()
         for i in self.listaPedido:
             resul += i.calcularPrecioFinal()
+        return resul
 
 class Principal:
 
     listaPedidos:list[TipoPedido]= [
-        Farmacia(25.6,5,"Farmacia",-5),
+        Farmacia(25.6,5,"Farmacia",10),
         Logistica(89.5,4,"Logistica",2.3)
     ]
 
-    gestionPedido:GestionPedido = [listaPedidos]
+    gestionPedido:GestionPedido = GestionPedido(listaPedidos)
 
     print(Farmacia.calcularPrecioFinal())
     print(Logistica.calcularPrecioFinal())
     print(gestionPedido.calcularPrecioTotal())
     print(gestionPedido.cantDePedidoDeLogitica())
 
-
-    
