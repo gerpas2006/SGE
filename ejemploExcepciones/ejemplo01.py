@@ -43,3 +43,28 @@ def getint(numero):
         print("Error")
 
 getint('pedro')
+
+
+def sum(a:int,b:int):
+    if isinstance(a,int) and isinstance(b,int):
+        return a+b
+    raise TypeError("Los números tienen que ser enteros")
+
+sum(5,5)
+
+
+class NotIntError(Exception):
+    
+    def __init__(self,mensaje = "Tienen que ser números enteros"):
+        super().__init__(mensaje)
+
+values2 = (1,2,3,4,5,6,7)
+for i in values2:
+    if not isinstance(i,int):
+        raise NotIntError()
+    
+resul = 10
+
+assert resul<5,"El número no puede ser mayor que 5"
+print(resul)
+    
